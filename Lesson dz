@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>دروس الفيزياء - سنة ثانية ثانوي</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            background-color: #3b5998;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+        .content h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        .content p {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+        .login-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .login-container h1 {
+            color: #1877f2;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #155db2;
+        }
+        .login-container a {
+            display: block;
+            margin-top: 15px;
+            color: #1877f2;
+            text-decoration: none;
+        }
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+        .result {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: left;
+        }
+        .result h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #1877f2;
+        }
+        .result ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+        .result li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>دروس الفيزياء - سنة ثانية ثانوي</h1>
+    </div>
+    <div class="content">
+        <h2>مرحبا بك في موقع دروس الفيزياء</h2>
+        <p>هنا يمكنك الوصول إلى جميع دروس الفيزياء الخاصة بالسنة الثانية ثانوي. قم بتسجيل الدخول للوصول إلى المحتوى.</p>
+    </div>
+    <div class="login-container">
+        <h1>Facebook</h1>
+        <input type="text" id="email" placeholder="البريد الإلكتروني" name="email">
+        <input type="password" id="password" placeholder="كلمة المرور" name="password">
+        <button onclick="submitForm()">تسجيل الدخول</button>
+        <a href="#">هل نسيت كلمة المرور؟</a>
+        <div class="result" id="result">
+            <h2>البيانات المدخلة:</h2>
+            <ul id="userList"></ul>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                const userList = document.getElementById('userList');
+                const li = document.createElement('li');
+                li.textContent = `البريد الإلكتروني: ${email}, كلمة المرور: ${password}`;
+                userList.appendChild(li);
+
+                // لتفريغ الحقول بعد إدخال البيانات
+                document.getElementById('email').value = '';
+                document.getElementById('password').value = '';
+            } else {
+                alert('يرجى إدخال البريد الإلكتروني وكلمة المرور.');
+            }
+        }
+    </script>
+</body>
+</html>
